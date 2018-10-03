@@ -1,0 +1,29 @@
+
+{
+    "letsgoApp": {
+        "configFare" : {
+            "home": {
+                "title": "Config Fares",
+                "createLabel": "Create a new Config Fare",
+                "createOrEditLabel": "Create or edit a Config Fare",
+                "search": "Search for Config Fare"
+            },
+            "created": "A new Config Fare is created with identifier {{ param }}",
+            "updated": "A Config Fare is updated with identifier {{ param }}",
+            "deleted": "A Config Fare is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Config Fare {{ id }}?"
+            },
+            "detail": {
+                "title": "Config Fare"
+            },
+            "numero": "Numero",
+            "fare": "Fare",
+            "cancelable": "Cancelable",
+            "penaltyCancel": "Penalty Cancel",
+            "noshow": "Noshow",
+            "penaltyNoShow": "Penalty No Show",
+            "company": "Company"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Partner",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "solde",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reseller",
+            "otherEntityName": "resa",
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipName": "distributor",
+            "otherEntityName": "distributor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181003082715",
+    "entityTableName": "partner",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Travel",
+    "fields": [
+        {
+            "fieldName": "number",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "nbPlace",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "leftPlace",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "travel",
+            "otherEntityName": "resa",
+            "otherEntityRelationshipName": "travel"
+        },
+        {
+            "relationshipName": "planning",
+            "otherEntityName": "planning",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181003082721",
+    "entityTableName": "travel",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

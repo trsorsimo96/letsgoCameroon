@@ -1,0 +1,25 @@
+
+{
+    "letsgoApp": {
+        "cabin" : {
+            "home": {
+                "title": "Cabins",
+                "createLabel": "Créer un nouveau Cabin",
+                "createOrEditLabel": "Créer ou éditer un Cabin",
+                "search": "Recherche pour Cabin"
+            },
+            "created": "Un nouveau Cabin a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cabin avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cabin avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cabin {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cabin"
+            },
+            "name": "Name",
+            "title": "Title",
+            "cabin": "Cabin"
+        }
+    }
+}

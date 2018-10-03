@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="configCommission">
+            <h2><span jhiTranslate="letsgoApp.configCommission.detail.title">Config Commission</span> {{configCommission.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="letsgoApp.configCommission.numero">Numero</span></dt>
+                <dd>
+                    <span>{{configCommission.numero}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.configCommission.commision">Commision</span></dt>
+                <dd>
+                    <span>{{configCommission.commision}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.configCommission.commisionPartner">Commision Partner</span></dt>
+                <dd>
+                    <span>{{configCommission.commisionPartner}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.configCommission.distributor">Distributor</span></dt>
+                <dd>
+                    <div *ngIf="configCommission.distributor">
+                        <a [routerLink]="['/distributor', configCommission.distributor?.id, 'view']">{{configCommission.distributor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.configCommission.company">Company</span></dt>
+                <dd>
+                    <div *ngIf="configCommission.company">
+                        <a [routerLink]="['/company', configCommission.company?.id, 'view']">{{configCommission.company?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/config-commission', configCommission.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

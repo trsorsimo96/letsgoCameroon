@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-config-commission-heading" jhiTranslate="letsgoApp.configCommission.home.createOrEditLabel">Create or edit a Config Commission</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!configCommission.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="configCommission.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.configCommission.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                        [(ngModel)]="configCommission.numero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.configCommission.commision" for="field_commision">Commision</label>
+                    <input type="number" class="form-control" name="commision" id="field_commision"
+                        [(ngModel)]="configCommission.commision" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.configCommission.commisionPartner" for="field_commisionPartner">Commision Partner</label>
+                    <input type="number" class="form-control" name="commisionPartner" id="field_commisionPartner"
+                        [(ngModel)]="configCommission.commisionPartner" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.configCommission.distributor" for="field_distributor">Distributor</label>
+                    <select class="form-control" id="field_distributor" name="distributor" [(ngModel)]="configCommission.distributor" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="distributorOption.id === configCommission.distributor?.id ? configCommission.distributor : distributorOption" *ngFor="let distributorOption of distributors; trackBy: trackDistributorById">{{distributorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.configCommission.company" for="field_company">Company</label>
+                    <select class="form-control" id="field_company" name="company" [(ngModel)]="configCommission.company" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="companyOption.id === configCommission.company?.id ? configCommission.company : companyOption" *ngFor="let companyOption of companies; trackBy: trackCompanyById">{{companyOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

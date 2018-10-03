@@ -1,0 +1,27 @@
+
+{
+    "letsgoApp": {
+        "configCommission" : {
+            "home": {
+                "title": "ConfigCommissions",
+                "createLabel": "Créer un nouveau Config Commission",
+                "createOrEditLabel": "Créer ou éditer un Config Commission",
+                "search": "Recherche pour Config Commission"
+            },
+            "created": "Un nouveau Config Commission a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Config Commission avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Config Commission avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Config Commission {{ id }} ?"
+            },
+            "detail": {
+                "title": "Config Commission"
+            },
+            "numero": "Numero",
+            "commision": "Commision",
+            "commisionPartner": "Commision Partner",
+            "distributor": "Distributor",
+            "company": "Company"
+        }
+    }
+}

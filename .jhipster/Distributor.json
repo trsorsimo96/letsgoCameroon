@@ -1,0 +1,45 @@
+{
+    "name": "Distributor",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "distributor",
+            "otherEntityName": "partner",
+            "otherEntityRelationshipName": "distributor"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "distributor",
+            "otherEntityName": "configCommission",
+            "otherEntityRelationshipName": "distributor"
+        }
+    ],
+    "changelogDate": "20181003082716",
+    "entityTableName": "distributor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

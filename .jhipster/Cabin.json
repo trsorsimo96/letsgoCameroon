@@ -1,0 +1,30 @@
+{
+    "name": "Cabin",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cabin",
+            "otherEntityName": "planning",
+            "otherEntityRelationshipName": "cabin"
+        }
+    ],
+    "changelogDate": "20181003082725",
+    "entityTableName": "cabin",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

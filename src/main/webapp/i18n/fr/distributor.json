@@ -1,0 +1,28 @@
+
+{
+    "letsgoApp": {
+        "distributor" : {
+            "home": {
+                "title": "Distributors",
+                "createLabel": "Créer un nouveau Distributor",
+                "createOrEditLabel": "Créer ou éditer un Distributor",
+                "search": "Recherche pour Distributor"
+            },
+            "created": "Un nouveau Distributor a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Distributor avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Distributor avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Distributor {{ id }} ?"
+            },
+            "detail": {
+                "title": "Distributor"
+            },
+            "name": "Name",
+            "email": "Email",
+            "number": "Number",
+            "logo": "Logo",
+            "distributor": "Distributor",
+            "distributor": "Distributor"
+        }
+    }
+}

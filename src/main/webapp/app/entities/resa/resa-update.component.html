@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-resa-heading" jhiTranslate="letsgoApp.resa.home.createOrEditLabel">Create or edit a Resa</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!resa.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="resa.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.passengerName" for="field_passengerName">Passenger Name</label>
+                    <input type="text" class="form-control" name="passengerName" id="field_passengerName"
+                        [(ngModel)]="resa.passengerName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.passengerCniNumber" for="field_passengerCniNumber">Passenger Cni Number</label>
+                    <input type="text" class="form-control" name="passengerCniNumber" id="field_passengerCniNumber"
+                        [(ngModel)]="resa.passengerCniNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="resa.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                        [(ngModel)]="resa.number" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.partner" for="field_partner">Partner</label>
+                    <select class="form-control" id="field_partner" name="partner" [(ngModel)]="resa.partner" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partnerOption.id === resa.partner?.id ? resa.partner : partnerOption" *ngFor="let partnerOption of partners; trackBy: trackPartnerById">{{partnerOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.company" for="field_company">Company</label>
+                    <select class="form-control" id="field_company" name="company" [(ngModel)]="resa.company" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="companyOption.id === resa.company?.id ? resa.company : companyOption" *ngFor="let companyOption of companies; trackBy: trackCompanyById">{{companyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.resa.travel" for="field_travel">Travel</label>
+                    <select class="form-control" id="field_travel" name="travel" [(ngModel)]="resa.travel" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="travelOption.id === resa.travel?.id ? resa.travel : travelOption" *ngFor="let travelOption of travels; trackBy: trackTravelById">{{travelOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

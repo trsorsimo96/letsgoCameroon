@@ -1,0 +1,55 @@
+{
+    "name": "Company",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reseller",
+            "otherEntityName": "resa",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "company",
+            "otherEntityName": "configCommission",
+            "otherEntityRelationshipName": "company"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "company",
+            "otherEntityName": "planning",
+            "otherEntityRelationshipName": "company"
+        }
+    ],
+    "changelogDate": "20181003082718",
+    "entityTableName": "company",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

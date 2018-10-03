@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-distributor-heading" jhiTranslate="letsgoApp.distributor.home.createOrEditLabel">Create or edit a Distributor</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!distributor.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="distributor.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.distributor.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="distributor.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.distributor.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="distributor.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.distributor.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                        [(ngModel)]="distributor.number" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.distributor.logo" for="field_logo">Logo</label>
+                    <div>
+                        <img [src]="'data:' + distributor.logoContentType + ';base64,' + distributor.logo" style="max-height: 100px;" *ngIf="distributor.logo" alt="distributor image"/>
+                        <div *ngIf="distributor.logo" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{distributor.logoContentType}}, {{byteSize(distributor.logo)}}</span>
+                            <button type="button" (click)="clearInputImage('logo', 'logoContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_logo" (change)="setFileData($event, distributor, 'logo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="logo" id="field_logo"
+                        [(ngModel)]="distributor.logo" />
+                    <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                        [(ngModel)]="distributor.logoContentType" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

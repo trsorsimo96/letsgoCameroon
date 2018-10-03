@@ -1,0 +1,40 @@
+{
+    "name": "Town",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "departure",
+            "otherEntityName": "route",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "town"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "arrival",
+            "otherEntityName": "route",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "town"
+        }
+    ],
+    "changelogDate": "20181003082717",
+    "entityTableName": "town",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

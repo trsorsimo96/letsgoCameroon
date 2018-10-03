@@ -1,0 +1,103 @@
+
+
+entity Partner {
+	name String,
+    solde Integer
+}
+
+entity Distributor{
+    name String,
+    email String,
+    number String,
+    logo ImageBlob
+}
+
+entity Town {
+    name String,
+    title String
+}
+
+entity Company {
+    name String,
+    title String,
+    email String,
+    number String,
+    logo ImageBlob
+}
+
+entity Route{
+    title String
+}
+
+entity Resa{
+    passengerName String,
+    passengerCniNumber String,
+    email String,
+    number String
+}
+
+entity Travel {
+   number Integer,
+   date ZonedDateTime,
+   nbPlace Integer,
+   leftPlace Integer
+}
+
+entity ConfigFare {
+    numero Integer,
+    fare Integer,
+    cancelable Boolean,
+    penaltyCancel Integer,
+    noshow Boolean,
+    penaltyNoShow Integer
+}
+
+entity ConfigCommission {
+    numero Integer,
+    commision Integer,
+    commisionPartner Integer
+}
+
+entity Planning {
+    mon Boolean,
+    tue Boolean,
+    wed Boolean,
+    thu Boolean,
+    fri Boolean,
+    sat Boolean,
+    sun Boolean
+    departureHour ZonedDateTime, 
+    arrivalHour ZonedDateTime
+}
+
+entity Cabin {
+    name String,
+    title String
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToOne {
+	Town{departure} to Route,
+    Town{arrival} to Route
+}
+
+
+relationship OneToMany {
+	Partner{reseller} to Resa,
+    Company{reseller} to Resa,
+    Travel{travel} to Resa,
+    Planning{travel} to Travel,
+    Distributor{distributor} to Partner,
+    Distributor{distributor} to ConfigCommission,
+    Company{company} to ConfigCommission,
+    Company{company} to Planning,
+    ConfigFare{company} to Planning,
+    Cabin{cabin} to Planning,
+    Route{path} to Planning,
+}
+
+
+
+
+
+
