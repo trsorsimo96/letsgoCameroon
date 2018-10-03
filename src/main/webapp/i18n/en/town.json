@@ -1,0 +1,26 @@
+
+{
+    "letsgoApp": {
+        "town" : {
+            "home": {
+                "title": "Towns",
+                "createLabel": "Create a new Town",
+                "createOrEditLabel": "Create or edit a Town",
+                "search": "Search for Town"
+            },
+            "created": "A new Town is created with identifier {{ param }}",
+            "updated": "A Town is updated with identifier {{ param }}",
+            "deleted": "A Town is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Town {{ id }}?"
+            },
+            "detail": {
+                "title": "Town"
+            },
+            "name": "Name",
+            "title": "Title",
+            "departure": "Departure",
+            "arrival": "Arrival"
+        }
+    }
+}

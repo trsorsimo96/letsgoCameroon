@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="planning">
+            <h2><span jhiTranslate="letsgoApp.planning.detail.title">Planning</span> {{planning.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="letsgoApp.planning.mon">Mon</span></dt>
+                <dd>
+                    <span>{{planning.mon}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.tue">Tue</span></dt>
+                <dd>
+                    <span>{{planning.tue}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.wed">Wed</span></dt>
+                <dd>
+                    <span>{{planning.wed}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.thu">Thu</span></dt>
+                <dd>
+                    <span>{{planning.thu}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.fri">Fri</span></dt>
+                <dd>
+                    <span>{{planning.fri}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.sat">Sat</span></dt>
+                <dd>
+                    <span>{{planning.sat}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.sun">Sun</span></dt>
+                <dd>
+                    <span>{{planning.sun}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.departureHour">Departure Hour</span></dt>
+                <dd>
+                    <span>{{planning.departureHour}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.arrivalHour">Arrival Hour</span></dt>
+                <dd>
+                    <span>{{planning.arrivalHour}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.company">Company</span></dt>
+                <dd>
+                    <div *ngIf="planning.company">
+                        <a [routerLink]="['/company', planning.company?.id, 'view']">{{planning.company?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.route">Route</span></dt>
+                <dd>
+                    <div *ngIf="planning.route">
+                        <a [routerLink]="['/route', planning.route?.id, 'view']">{{planning.route?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.configFare">Config Fare</span></dt>
+                <dd>
+                    <div *ngIf="planning.configFare">
+                        <a [routerLink]="['/config-fare', planning.configFare?.id, 'view']">{{planning.configFare?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.planning.cabin">Cabin</span></dt>
+                <dd>
+                    <div *ngIf="planning.cabin">
+                        <a [routerLink]="['/cabin', planning.cabin?.id, 'view']">{{planning.cabin?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/planning', planning.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

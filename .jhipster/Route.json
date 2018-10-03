@@ -1,0 +1,26 @@
+{
+    "name": "Route",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "path",
+            "otherEntityName": "planning",
+            "otherEntityRelationshipName": "route"
+        }
+    ],
+    "changelogDate": "20181003082719",
+    "entityTableName": "route",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,46 @@
+{
+    "name": "ConfigFare",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fare",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cancelable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "penaltyCancel",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "noshow",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "penaltyNoShow",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "company",
+            "otherEntityName": "planning",
+            "otherEntityRelationshipName": "configFare"
+        }
+    ],
+    "changelogDate": "20181003082722",
+    "entityTableName": "config_fare",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

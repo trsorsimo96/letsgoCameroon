@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-planning-heading" jhiTranslate="letsgoApp.planning.home.createOrEditLabel">Create or edit a Planning</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!planning.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="planning.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.mon" for="field_mon">Mon</label>
+                    <input type="checkbox" class="form-control" name="mon" id="field_mon"
+                        [(ngModel)]="planning.mon" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.tue" for="field_tue">Tue</label>
+                    <input type="checkbox" class="form-control" name="tue" id="field_tue"
+                        [(ngModel)]="planning.tue" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.wed" for="field_wed">Wed</label>
+                    <input type="checkbox" class="form-control" name="wed" id="field_wed"
+                        [(ngModel)]="planning.wed" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.thu" for="field_thu">Thu</label>
+                    <input type="checkbox" class="form-control" name="thu" id="field_thu"
+                        [(ngModel)]="planning.thu" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.fri" for="field_fri">Fri</label>
+                    <input type="checkbox" class="form-control" name="fri" id="field_fri"
+                        [(ngModel)]="planning.fri" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.sat" for="field_sat">Sat</label>
+                    <input type="checkbox" class="form-control" name="sat" id="field_sat"
+                        [(ngModel)]="planning.sat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.sun" for="field_sun">Sun</label>
+                    <input type="checkbox" class="form-control" name="sun" id="field_sun"
+                        [(ngModel)]="planning.sun" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.departureHour" for="field_departureHour">Departure Hour</label>
+                    <div class="d-flex">
+                        <input id="field_departureHour" type="datetime-local" class="form-control" name="departureHour" [(ngModel)]="departureHour"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.arrivalHour" for="field_arrivalHour">Arrival Hour</label>
+                    <div class="d-flex">
+                        <input id="field_arrivalHour" type="datetime-local" class="form-control" name="arrivalHour" [(ngModel)]="arrivalHour"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.company" for="field_company">Company</label>
+                    <select class="form-control" id="field_company" name="company" [(ngModel)]="planning.company" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="companyOption.id === planning.company?.id ? planning.company : companyOption" *ngFor="let companyOption of companies; trackBy: trackCompanyById">{{companyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.route" for="field_route">Route</label>
+                    <select class="form-control" id="field_route" name="route" [(ngModel)]="planning.route" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="routeOption.id === planning.route?.id ? planning.route : routeOption" *ngFor="let routeOption of routes; trackBy: trackRouteById">{{routeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.configFare" for="field_configFare">Config Fare</label>
+                    <select class="form-control" id="field_configFare" name="configFare" [(ngModel)]="planning.configFare" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="configFareOption.id === planning.configFare?.id ? planning.configFare : configFareOption" *ngFor="let configFareOption of configfares; trackBy: trackConfigFareById">{{configFareOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="letsgoApp.planning.cabin" for="field_cabin">Cabin</label>
+                    <select class="form-control" id="field_cabin" name="cabin" [(ngModel)]="planning.cabin" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cabinOption.id === planning.cabin?.id ? planning.cabin : cabinOption" *ngFor="let cabinOption of cabins; trackBy: trackCabinById">{{cabinOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

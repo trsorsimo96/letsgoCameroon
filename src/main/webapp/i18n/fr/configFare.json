@@ -1,0 +1,29 @@
+
+{
+    "letsgoApp": {
+        "configFare" : {
+            "home": {
+                "title": "ConfigFares",
+                "createLabel": "Créer un nouveau Config Fare",
+                "createOrEditLabel": "Créer ou éditer un Config Fare",
+                "search": "Recherche pour Config Fare"
+            },
+            "created": "Un nouveau Config Fare a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Config Fare avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Config Fare avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Config Fare {{ id }} ?"
+            },
+            "detail": {
+                "title": "Config Fare"
+            },
+            "numero": "Numero",
+            "fare": "Fare",
+            "cancelable": "Cancelable",
+            "penaltyCancel": "Penalty Cancel",
+            "noshow": "Noshow",
+            "penaltyNoShow": "Penalty No Show",
+            "company": "Company"
+        }
+    }
+}

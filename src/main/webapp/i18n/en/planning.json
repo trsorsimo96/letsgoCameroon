@@ -1,0 +1,36 @@
+
+{
+    "letsgoApp": {
+        "planning" : {
+            "home": {
+                "title": "Plannings",
+                "createLabel": "Create a new Planning",
+                "createOrEditLabel": "Create or edit a Planning",
+                "search": "Search for Planning"
+            },
+            "created": "A new Planning is created with identifier {{ param }}",
+            "updated": "A Planning is updated with identifier {{ param }}",
+            "deleted": "A Planning is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Planning {{ id }}?"
+            },
+            "detail": {
+                "title": "Planning"
+            },
+            "mon": "Mon",
+            "tue": "Tue",
+            "wed": "Wed",
+            "thu": "Thu",
+            "fri": "Fri",
+            "sat": "Sat",
+            "sun": "Sun",
+            "departureHour": "Departure Hour",
+            "arrivalHour": "Arrival Hour",
+            "company": "Company",
+            "route": "Route",
+            "configFare": "Config Fare",
+            "travel": "Travel",
+            "cabin": "Cabin"
+        }
+    }
+}

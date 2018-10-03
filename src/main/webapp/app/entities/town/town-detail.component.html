@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="town">
+            <h2><span jhiTranslate="letsgoApp.town.detail.title">Town</span> {{town.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="letsgoApp.town.name">Name</span></dt>
+                <dd>
+                    <span>{{town.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.town.title">Title</span></dt>
+                <dd>
+                    <span>{{town.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.town.departure">Departure</span></dt>
+                <dd>
+                    <div *ngIf="town.departure">
+                        <a [routerLink]="['/route', town.departure?.id, 'view']">{{town.departure?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="letsgoApp.town.arrival">Arrival</span></dt>
+                <dd>
+                    <div *ngIf="town.arrival">
+                        <a [routerLink]="['/route', town.arrival?.id, 'view']">{{town.arrival?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/town', town.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+{
+    "name": "Planning",
+    "fields": [
+        {
+            "fieldName": "mon",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "tue",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "wed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "thu",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fri",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sat",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sun",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "departureHour",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "arrivalHour",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "company",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "route",
+            "otherEntityName": "route",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "configFare",
+            "otherEntityName": "configFare",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "travel",
+            "otherEntityName": "travel",
+            "otherEntityRelationshipName": "planning"
+        },
+        {
+            "relationshipName": "cabin",
+            "otherEntityName": "cabin",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181003082724",
+    "entityTableName": "planning",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

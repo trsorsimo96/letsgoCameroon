@@ -1,0 +1,28 @@
+
+{
+    "letsgoApp": {
+        "travel" : {
+            "home": {
+                "title": "Travels",
+                "createLabel": "Créer un nouveau Travel",
+                "createOrEditLabel": "Créer ou éditer un Travel",
+                "search": "Recherche pour Travel"
+            },
+            "created": "Un nouveau Travel a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Travel avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Travel avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Travel {{ id }} ?"
+            },
+            "detail": {
+                "title": "Travel"
+            },
+            "number": "Number",
+            "date": "Date",
+            "nbPlace": "Nb Place",
+            "leftPlace": "Left Place",
+            "travel": "Travel",
+            "planning": "Planning"
+        }
+    }
+}

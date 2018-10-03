@@ -1,0 +1,29 @@
+
+{
+    "letsgoApp": {
+        "resa" : {
+            "home": {
+                "title": "Resas",
+                "createLabel": "Créer un nouveau Resa",
+                "createOrEditLabel": "Créer ou éditer un Resa",
+                "search": "Recherche pour Resa"
+            },
+            "created": "Un nouveau Resa a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Resa avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Resa avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Resa {{ id }} ?"
+            },
+            "detail": {
+                "title": "Resa"
+            },
+            "passengerName": "Passenger Name",
+            "passengerCniNumber": "Passenger Cni Number",
+            "email": "Email",
+            "number": "Number",
+            "partner": "Partner",
+            "company": "Company",
+            "travel": "Travel"
+        }
+    }
+}
